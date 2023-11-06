@@ -1,0 +1,27 @@
+[package]
+name = "fixed-size"
+description = "Attribute macro to replace variable length types with fixed length types in struct definitions. Useful for overriding String when using prost."
+version = "1.0.0"
+authors = ["Trevor R.H. Clarke <retrev@csh.rit.edu>"]
+license = "MIT/Apache-2.0"
+keywords = ["attribute","macro"]
+repository = "https://github.com/tclarke/fixed-size"
+documentation = "https://docs.rs/crate/fixed-size"
+edition = "2021"
+publish = ["crate-proxy"]
+
+[lib]
+proc-macro = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = { version = "1.0.75", registry = "crate-proxy" }
+proc-macro2 = { version = "1.0.69", registry = "crate-proxy" }
+quote = { version = "1.0.33", registry = "crate-proxy" }
+syn = { version = "2.0.38", registry = "crate-proxy", features = ["fold", "full"] }
+
+[dev-dependencies]
+arrayvec = { version = "0.7.4", registry = "crate-proxy", features = ["serde"] }
+bincode = { version = "1.3.3", registry = "crate-proxy" }
+serde = { version = "1.0.190", registry = "crate-proxy", features = ["derive"] }
