@@ -118,7 +118,7 @@ impl Fold for Args {
             let typ = &self.typ;
             if let Some(num) = self.size_map.get(key) {
                 if let Type::Path(p) = &input.ty {
-                    if p.path.is_ident("String") {
+                    if p.path.is_ident("String") || p.path.segments.last().unwrap().ident.to_string() == "String" {
                         return Field {
                             attrs: input.attrs,
                             vis: input.vis,
