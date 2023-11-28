@@ -20,7 +20,7 @@ proc-macro = true
 anyhow = { version = "1.0.75" }
 proc-macro2 = { version = "1.0.69" }
 quote = { version = "1.0.33" }
-syn = { version = "2.0.38", features = ["fold", "full"] }
+syn = { version = "2.0.38", features = ["fold", "full", "extra-traits"] }
 
 [dev-dependencies]
 arrayvec = { version = "0.7.4", features = ["serde"] }
